@@ -1,0 +1,41 @@
+div {
+    display:flex;
+    word-break: break-all;
+}
+
+#btnAddBox{
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: rgb(111, 90, 149);
+    border-color: 5px solid black;
+}
+.caja {
+    display:flex;
+    flex-direction: column;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border: 3px solid black;
+    background-color: rgb(138, 133, 133);
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    color:black;
+}
+.img-card{
+    object-fit: cover;
+    width: 100%;
+    height: 100px;
+}
+/* ejercicio 3 */
+#vistaGrande{
+    display:none;
+}
+
+#imagenLg{
+    border:2px solid black;
+    border-radius: 90px;
+}
