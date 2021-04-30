@@ -14,29 +14,27 @@
     <h2>
       Al apretar en el botón, se mostrara una card con los elementos ingresados
     </h2>
-    <br />
-    <br />
+
     <h3>Imagen</h3>
-    <input type="text" id="imagen" />
+    <input type="text" id="imagenInput" />
 
     <h3>Agregando Cajas</h3>
     <input type="text" id="texto" />
-    <br />
-    <br />
+
     <button id="btnAddBox">Agregar Box</button>
     <p>Aqui se crea un div</p>
     <p>
       con el cual clickeando en la imagen, redirige hacia la url de la misma
     </p>
+    <p>Y clickeando en la card, genera abajo la imagen en tamaño real</p>
+    <div id="contenedor"></div>
 
-    <br />
     <div id="vistaGrande">
-      <img id="imagenLg" src="" />
+      <img id="bigImg" src="" />
       <button id="cerrarImgGrande">X</button>
     </div>
     <br />
 
-    <div id="contenedor"></div>
     <script src="./script.js"></script>
   </body>
 </html>

@@ -1,16 +1,26 @@
 
-const boton2 = document.getElementById("btnAddBox");
+const btnBox = document.getElementById("btnAddBox");
 const divContainer = document.getElementById("contenedor");
 const texto = document.getElementById("texto")
-const imagen = document.getElementById("imagen")
-const divGrande = document.getElementById("vistaGrande")
-const btnClose = document.getElementById("cerrarImgGrande")
-const igLg = document.getElementById('imagenLg');
+const imagen = document.getElementById("imagenInput")
+const igLg = document.getElementById('bigImg');
 
+/* resetea los valores de los inputs */
 function reset(){
     imagen.value = '';
     texto.value = '';
 }
+//Img de muestra
+//https://i.pinimg.com/originals/ae/bb/2a/aebb2aba5805a17893f72429b5995ee2.jpg
+
+/* creando el div grande */
+  const divBig = document.getElementById("vistaGrande");
+  const bigImg = document.getElementById("bigImg");
+  imagen.addEventListener("click",function(){
+    bigImg.setAttribute("src",texto);
+    //alterna en eliminar o crear clase
+    divBig.classList.toggle("vistaGrande");
+  });
 
  /* abriendo la imagen en otra pagina al click */
 igLg.addEventListener('click', function openImg() {
@@ -19,16 +29,20 @@ igLg.addEventListener('click', function openImg() {
     console.log(openImg);
 })
 
-/* cerrar imagen grande */
-btnClose.addEventListener('click',function (){
-    divGrande.style.display = "none";
-});
+//boton cerrar
+  const btnClose = document.getElementById("cerrarImgGrande")
+  btnClose.addEventListener("click",function(){
+    //elimina la class si existe sino la agrega. alterna 
+    divBig.classList.toggle("vistaGrande");
+    divBig.style.display='none'
+  });
+
 
 /* creando boton imagen y texto */
-boton2.addEventListener('click', function () {
+btnBox.addEventListener('click', function () {
     /*  Mostrando div grande */
-    divGrande.style.display = "block";
-   
+    divBig.style.display = "none";
+
     const addBox = document.createElement('div');
     addBox.classList.add('caja');
 
@@ -48,15 +62,18 @@ boton2.addEventListener('click', function () {
     addIg.setAttribute('src', imagen.value);
 
      /* sacando src de la imagen y uniendola con ImgLg */
-    const addIgLg = imagenLg.setAttribute('src',imagen.value)
-   
-    
-
+    const addIgLg = igLg.setAttribute('src',imagen.value);
+;
+    /* blockea el divBig */
+    addIg.addEventListener('click',function(){
+        divBig.style.display = "block";
+    });
     
 
     /* mostrar card */
     addBox.appendChild(addIg);
     addBox.appendChild(addText);
+    addBox.appendChild(divBig);
     divContainer.appendChild(addBox);
 
 
