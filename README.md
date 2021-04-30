@@ -7,7 +7,8 @@ EjercicioJs-2 ComunIT course
 
 ### Curso ComunIT
 - Ejercicios en el DOM 
+- preview del sitio: https://htmlpreview.github.io/?https://github.com/zelayab/EjercicioJs-2/blob/main/index.html
 ##### Lenguajes Usados
 - Html
 - CSS
-- Js
+- JS
